@@ -10,13 +10,19 @@
     <fragment
         android:id="@+id/leftFrag"
         android:name="com.example.fragmenttest.fragment.FragmentLeft"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/rightFrameLayout"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+<!--    <fragment-->
+<!--        android:id="@+id/leftFrag"-->
+<!--        android:name="com.example.fragmenttest.fragment.FragmentLeft"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintHorizontal_weight="1"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/rightFrameLayout"-->
+<!--        />-->
 
 <!--    <fragment-->
 <!--        android:id="@+id/rightFrag"-->
@@ -28,14 +34,15 @@
 <!--        app:layout_constraintTop_toTopOf="parent"-->
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
 <!--        />-->
-    <FrameLayout
-        android:id="@+id/rightFrameLayout"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        app:layout_constraintStart_toEndOf="@+id/leftFrag"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_weight="1"
-        />
+<!--    点击换页-->
+<!--    <FrameLayout-->
+<!--        android:id="@+id/rightFrameLayout"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/leftFrag"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintHorizontal_weight="1"-->
+<!--        />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

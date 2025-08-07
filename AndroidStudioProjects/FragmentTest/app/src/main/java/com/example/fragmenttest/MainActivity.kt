@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity(), FragmentLeft.onButtonClickListener {
 //            Log.d("点击事件", "leftButton被点击了")
 //            replaceFragment(AnotherFragmentRight())
 //        }
+        val fragment = supportFragmentManager.findFragmentById(R.id.leftFrag) as FragmentLeft
+
         // 常规传入FragmentRight
         replaceFragment(FragmentRight())
 
@@ -39,10 +41,11 @@ class MainActivity : AppCompatActivity(), FragmentLeft.onButtonClickListener {
     }
 
     private fun replaceFragment(fragment : Fragment) {
-        val fragmentManager  = supportFragmentManager
-        val transaction = fragmentManager.beginTransaction()
-        transaction.replace(R.id.rightFrameLayout, fragment)
-        transaction.commit()
+//        val fragmentManager  = supportFragmentManager
+//        val transaction = fragmentManager.beginTransaction()
+//        transaction.replace(R.id.rightFrameLayout, fragment)
+//        transaction.addToBackStack(null)
+//        transaction.commit()
     }
 
     override fun onLeftButtonClick() {

@@ -8,7 +8,10 @@ import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.setPadding
+import androidx.core.view.updatePadding
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.uibestpractice.databinding.ActivityMainBinding
@@ -23,9 +26,32 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // enableEdgeToEdge()
+        enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        /**
+         * 设置窗口属性，
+         * 禁止系统自动处理系统栏遮挡
+         * 将边衬区处理权完全交给开发者
+         */
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
+
+
+        // 添加窗口边衬区处理
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { view, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            val ime = insets.getInsets(WindowInsetsCompat.Type.ime())
+
+            view.updatePadding(
+                top = systemBars.top,
+                bottom = if (ime.bottom > 0) ime.bottom else systemBars.bottom
+            )
+
+            insets
+        }
+
 
         initMsg()
 

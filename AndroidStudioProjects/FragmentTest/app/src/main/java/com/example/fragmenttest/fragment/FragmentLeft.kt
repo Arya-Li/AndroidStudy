@@ -5,20 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.fragmenttest.R
 import com.example.fragmenttest.databinding.FragmentLeftBinding
-import com.google.android.material.button.MaterialButtonToggleGroup.OnButtonCheckedListener
 
 class FragmentLeft : Fragment() {
 
     private var _binding: FragmentLeftBinding? = null
-    private val binding get() = _binding
+    // 属性委托语法，定义了只读属性binding，其实际值来自于_binding
+    // get() 表示每次访问binding属性时，都会动态返回_binding的当前值
+    private val binding get() = _binding!!
 
     // 定义接口
     interface onButtonClickListener {
         fun onLeftButtonClick()
     }
-    private var listener: onButtonClickListener? = null
+    private var listener : onButtonClickListener? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
